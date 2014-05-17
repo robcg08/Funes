@@ -39,7 +39,7 @@
                     <table class="Bars">
                         <tr>
                             <div>
-                                <td>10 stars</td>
+                                <td>10 ★</td>
                             </div>
                             <div>
                                 <td>
@@ -55,7 +55,7 @@
                         </tr>
                         <tr>
                             <div>
-                                <td>9 stars</td>
+                                <td>9 ★</td>
                             </div>
                             <div>
                                 <td>
@@ -71,7 +71,7 @@
                         </tr>
                         <tr>
                             <div>
-                                <td>8 stars</td>
+                                <td>8 ★</td>
                             </div>
                             <div>
                                 <td>
@@ -87,7 +87,7 @@
                         </tr>
                         <tr>
                             <div>
-                                <td>7 stars</td>
+                                <td>7 ★</td>
                             </div>
                             <div>
                                 <td>
@@ -103,7 +103,7 @@
                         </tr>
                         <tr>
                             <div>
-                                <td>6 stars</td>
+                                <td>6 ★</td>
                             </div>
                             <div>
                                 <td>
@@ -119,7 +119,7 @@
                         </tr>
                         <tr>
                             <div>
-                                <td>5 stars</td>
+                                <td>5 ★</td>
                             </div>
                             <div>
                                 <td>
@@ -135,7 +135,7 @@
                         </tr>
                         <tr>
                             <div>
-                                <td>4 stars</td>
+                                <td>4 ★</td>
                             </div>
                             <div>
                                 <td>
@@ -151,7 +151,7 @@
                         </tr>
                         <tr>
                             <div>
-                                <td>3 stars</td>
+                                <td>3 ★</td>
                             </div>
                             <div>
                                 <td>
@@ -167,7 +167,7 @@
                         </tr>
                         <tr>
                             <div>
-                                <td>2 stars</td>
+                                <td>2 ★</td>
                             </div>
                             <div>
                                 <td>
@@ -183,7 +183,7 @@
                         </tr>
                         <tr>
                             <div>
-                                <td>1 stars</td>
+                                <td>1 ★</td>
                             </div>
                             <div>
                                 <td>
