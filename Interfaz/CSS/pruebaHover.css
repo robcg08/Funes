@@ -1,0 +1,30 @@
+.reviews {
+    /*    display: none;*/
+}
+.reviews {
+    height: 300px;
+    width: 400px;
+}
+.left {
+    font-family: 'Marcellus SC', serif;
+    padding-right: 5px;
+    width: 21%;
+    height: 163px;
+    float: left;
+    margin-right: 0;
+    border-right: 1px solid #006cff;
+}
+.calfProm p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.50em;
+}
+.calfProm h1{
+    text-align: center;
+    font-size: 4.8em;
+}
+.right {
+    font-family: 'Play', sans-serif;
+    float: left;
+    margin-left: 5px
+}
