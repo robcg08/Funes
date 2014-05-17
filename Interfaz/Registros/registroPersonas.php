@@ -28,6 +28,10 @@
                                     <input type="text">
                                 </div>
                                 <div>
+                                    <p>Cédula</p>
+                                    <input type="text" >
+                                </div>
+                                <div>
                                     <p>Género</p>
                                     <select>
                                         <option>M</option>
@@ -37,10 +41,6 @@
                                 <div>
                                     <p>Fecha de Nacimiento</p>
                                     <input type="date">
-                                </div>
-                                <div>
-                                    <p>Edad</p>
-                                    <input type="text" readonly>
                                 </div>
                                 <div>
                                     <p>Institución donde labora</p>
