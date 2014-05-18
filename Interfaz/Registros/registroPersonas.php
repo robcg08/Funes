@@ -43,12 +43,11 @@
                                     <input type="date">
                                 </div>
                                 <div>
-                                    <p>Institución donde labora</p>
-                                    <input type="text">
-                                </div>
-                                <div>
-                                    <p>Cargo que desempeña</p>
-                                    <input type="text">
+                                  <p>Categoría</p>
+                                  <select>
+
+                                  </select>
+                                  <input type="button" value="--">
                                 </div>
                                 <div class="submit">
                                     <input type="submit" class="btnRegistrar" value="Registrar">
