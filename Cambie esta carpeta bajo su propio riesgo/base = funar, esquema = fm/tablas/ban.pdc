@@ -1,13 +1,24 @@
 -- Create table
 create table BAN
 (
-  id_ban  NUMBER(10) not null,
-  usuario VARCHAR2(21)
+  id_ban                      NUMBER(10) not null,
+  usuario                     VARCHAR2(21),
+  fec_ultima_modificacion     DATE,
+  usuario_ultima_modificacion VARCHAR2(10),
+  fec_creacion                DATE,
+  usuario_creacion            VARCHAR2(10)
 )
 tablespace FM_DATA
   pctfree 10
   initrans 1
-  maxtrans 255;
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
 -- Create/Recreate primary, unique and foreign key constraints 
 alter table BAN
   add constraint PK_BAN primary key (ID_BAN)
@@ -15,7 +26,14 @@ alter table BAN
   tablespace FM_DATA
   pctfree 10
   initrans 2
-  maxtrans 255;
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
 alter table BAN
   add constraint FK_USUA foreign key (USUARIO)
   references USUARIO (USUARIO);

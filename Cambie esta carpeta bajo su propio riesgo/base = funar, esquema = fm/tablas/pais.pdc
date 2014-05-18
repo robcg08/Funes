@@ -1,8 +1,12 @@
 -- Create table
 create table PAIS
 (
-  id_pais NUMBER(10) not null,
-  nombre  VARCHAR2(21)
+  id_pais                     NUMBER(10) not null,
+  nombre                      VARCHAR2(21),
+  fec_ultima_modificacion     DATE,
+  usuario_ultima_modificacion VARCHAR2(10),
+  fec_creacion                DATE,
+  usuario_creacion            VARCHAR2(10)
 )
 tablespace FM_DATA
   pctfree 10

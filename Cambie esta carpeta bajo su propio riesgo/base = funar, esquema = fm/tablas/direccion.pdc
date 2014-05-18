@@ -1,13 +1,17 @@
 -- Create table
 create table DIRECCION
 (
-  id_direccion NUMBER(10) not null,
-  id_barrio    NUMBER(10),
-  id_distrito  NUMBER(10),
-  id_canton    NUMBER(10),
-  id_provincia NUMBER(10),
-  id_pais      NUMBER(10),
-  adicional    VARCHAR2(100)
+  id_direccion                NUMBER(10) not null,
+  id_barrio                   NUMBER(10),
+  id_distrito                 NUMBER(10),
+  id_canton                   NUMBER(10),
+  id_provincia                NUMBER(10),
+  id_pais                     NUMBER(10),
+  adicional                   VARCHAR2(100),
+  fec_ultima_modificacion     DATE,
+  usuario_ultima_modificacion VARCHAR2(10),
+  fec_creacion                DATE,
+  usuario_creacion            VARCHAR2(10)
 )
 tablespace FM_DATA
   pctfree 10

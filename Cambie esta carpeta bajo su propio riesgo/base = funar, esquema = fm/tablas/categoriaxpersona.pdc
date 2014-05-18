@@ -1,8 +1,12 @@
 -- Create table
 create table CATEGORIAXPERSONA
 (
-  id_categoria NUMBER(10) not null,
-  cedula       NUMBER(10) not null
+  id_categoria                NUMBER(10) not null,
+  cedula                      NUMBER(10) not null,
+  fec_ultima_modificacion     DATE,
+  usuario_ultima_modificacion VARCHAR2(10),
+  fec_creacion                DATE,
+  usuario_creacion            VARCHAR2(10)
 )
 tablespace FM_DATA
   pctfree 10

@@ -1,10 +1,14 @@
 -- Create table
 create table REVIEW
 (
-  id_review    NUMBER(10) not null,
-  review       VARCHAR2(21),
-  calificacion NUMBER(10),
-  evidencia    VARCHAR2(100)
+  id_review                   NUMBER(10) not null,
+  review                      VARCHAR2(21),
+  calificacion                NUMBER(10),
+  evidencia                   VARCHAR2(100),
+  fec_ultima_modificacion     DATE,
+  usuario_ultima_modificacion VARCHAR2(10),
+  fec_creacion                DATE,
+  usuario_creacion            VARCHAR2(10)
 )
 tablespace FM_DATA
   pctfree 10

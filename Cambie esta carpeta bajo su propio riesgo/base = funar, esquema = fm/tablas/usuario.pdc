@@ -1,13 +1,17 @@
 -- Create table
 create table USUARIO
 (
-  usuario   VARCHAR2(21) not null,
-  nick      VARCHAR2(21),
-  pass      VARCHAR2(21),
-  privado   VARCHAR2(2),
-  reportes  NUMBER(2),
-  bloqueado VARCHAR2(2),
-  cedula    NUMBER(10)
+  usuario                     VARCHAR2(21) not null,
+  nick                        VARCHAR2(21),
+  pass                        VARCHAR2(21),
+  privado                     VARCHAR2(2),
+  reportes                    NUMBER(10),
+  bloqueado                   VARCHAR2(10),
+  cedula                      NUMBER(10),
+  fec_ultima_modificacion     DATE,
+  usuario_ultima_modificacion VARCHAR2(10),
+  fec_creacion                DATE,
+  usuario_creacion            VARCHAR2(10)
 )
 tablespace FM_DATA
   pctfree 10

@@ -1,12 +1,16 @@
 -- Create table
 create table PERSONA
 (
-  cedula           NUMBER(10) not null,
-  nombre           VARCHAR2(21),
-  primer_apellido  VARCHAR2(21),
-  segundo_apellido VARCHAR2(21),
-  genero           VARCHAR2(1),
-  fecha_nacimiento DATE
+  cedula                      NUMBER(10) not null,
+  nombre                      VARCHAR2(21),
+  primer_apellido             VARCHAR2(21),
+  segundo_apellido            VARCHAR2(21),
+  genero                      VARCHAR2(1),
+  fecha_nacimiento            DATE,
+  fec_ultima_modificacion     DATE,
+  usuario_ultima_modificacion VARCHAR2(10),
+  fec_creacion                DATE,
+  usuario_creacion            VARCHAR2(10)
 )
 tablespace FM_DATA
   pctfree 10
