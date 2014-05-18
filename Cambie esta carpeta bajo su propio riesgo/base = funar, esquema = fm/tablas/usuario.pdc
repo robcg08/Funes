@@ -1,0 +1,40 @@
+-- Create table
+create table USUARIO
+(
+  usuario   VARCHAR2(21) not null,
+  nick      VARCHAR2(21),
+  pass      VARCHAR2(21),
+  privado   VARCHAR2(2),
+  reportes  NUMBER(2),
+  bloqueado VARCHAR2(2),
+  cedula    NUMBER(10)
+)
+tablespace FM_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table USUARIO
+  add constraint PK_USUARIO primary key (USUARIO)
+  using index 
+  tablespace FM_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table USUARIO
+  add constraint FK_CEDULA_P foreign key (CEDULA)
+  references PERSONA (CEDULA);

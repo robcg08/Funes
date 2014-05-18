@@ -1,0 +1,32 @@
+-- Create table
+create table PAIS
+(
+  id_pais NUMBER(10) not null,
+  nombre  VARCHAR2(21)
+)
+tablespace FM_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table PAIS
+  add constraint PK_PAIS primary key (ID_PAIS)
+  using index 
+  tablespace FM_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );

@@ -1,0 +1,38 @@
+-- Create table
+create table CATEGORIAXPERSONA
+(
+  id_categoria NUMBER(10) not null,
+  cedula       NUMBER(10) not null
+)
+tablespace FM_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table CATEGORIAXPERSONA
+  add constraint PK_CATEGORIAXPERSONA primary key (CEDULA, ID_CATEGORIA)
+  using index 
+  tablespace FM_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table CATEGORIAXPERSONA
+  add constraint FK_CAT_CEDULA foreign key (CEDULA)
+  references PERSONA (CEDULA);
+alter table CATEGORIAXPERSONA
+  add constraint FK_CAT_ID foreign key (ID_CATEGORIA)
+  references CATEGORIA (ID_CATEGORIA);

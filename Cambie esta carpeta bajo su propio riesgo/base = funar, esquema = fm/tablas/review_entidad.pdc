@@ -1,0 +1,39 @@
+-- Create table
+create table REVIEW_ENTIDAD
+(
+  usuario    VARCHAR2(21) not null,
+  id_review  NUMBER(10),
+  id_entidad NUMBER(10) not null
+)
+tablespace FM_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table REVIEW_ENTIDAD
+  add constraint PK_REVIEW_ENT primary key (USUARIO, ID_ENTIDAD)
+  using index 
+  tablespace FM_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table REVIEW_ENTIDAD
+  add constraint FK_REV_ID_ENTIDAD foreign key (ID_ENTIDAD)
+  references ENTIDAD (ID_ENTIDAD);
+alter table REVIEW_ENTIDAD
+  add constraint FK_REVIEW_ENT_USUARIO foreign key (USUARIO)
+  references USUARIO (USUARIO);

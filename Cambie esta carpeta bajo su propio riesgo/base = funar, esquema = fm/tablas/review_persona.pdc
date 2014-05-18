@@ -1,0 +1,39 @@
+-- Create table
+create table REVIEW_PERSONA
+(
+  usuario   VARCHAR2(21) not null,
+  cedula    NUMBER(10) not null,
+  id_review NUMBER(10) not null
+)
+tablespace FM_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table REVIEW_PERSONA
+  add constraint PK_REVIEW_PERSONA primary key (CEDULA, USUARIO)
+  using index 
+  tablespace FM_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table REVIEW_PERSONA
+  add constraint FK_REVIEW_CEDULA foreign key (CEDULA)
+  references PERSONA (CEDULA);
+alter table REVIEW_PERSONA
+  add constraint FK_REVIEW_USUARIO foreign key (USUARIO)
+  references USUARIO (USUARIO);

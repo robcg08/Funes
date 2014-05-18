@@ -1,0 +1,38 @@
+-- Create table
+create table CATEGORIAXENTIDAD
+(
+  id_categoria NUMBER(10) not null,
+  id_entidad   NUMBER(10) not null
+)
+tablespace FM_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table CATEGORIAXENTIDAD
+  add constraint PK_CAT_ENT primary key (ID_CATEGORIA, ID_ENTIDAD)
+  using index 
+  tablespace FM_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table CATEGORIAXENTIDAD
+  add constraint FK_CAT_ENT_ID foreign key (ID_CATEGORIA)
+  references CATEGORIA (ID_CATEGORIA);
+alter table CATEGORIAXENTIDAD
+  add constraint FK_CAT_ID_ENT foreign key (ID_ENTIDAD)
+  references ENTIDAD (ID_ENTIDAD);

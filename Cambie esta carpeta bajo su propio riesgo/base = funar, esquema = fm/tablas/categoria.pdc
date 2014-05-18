@@ -1,0 +1,36 @@
+-- Create table
+create table CATEGORIA
+(
+  id_categoria      NUMBER(10) not null,
+  nombre            VARCHAR2(21),
+  id_tipo_categoria NUMBER(10)
+)
+tablespace FM_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table CATEGORIA
+  add constraint PK_CATEGORIA primary key (ID_CATEGORIA)
+  using index 
+  tablespace FM_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table CATEGORIA
+  add constraint FK_TIPO_CATEGORIA foreign key (ID_TIPO_CATEGORIA)
+  references TIPO_CATEGORIA (ID_TIPO_CATEGORIA);

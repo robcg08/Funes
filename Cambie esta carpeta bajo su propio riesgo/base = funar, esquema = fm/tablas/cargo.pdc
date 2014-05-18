@@ -1,0 +1,36 @@
+-- Create table
+create table CARGO
+(
+  id_cargo         NUMBER(10) not null,
+  nombre           VARCHAR2(21),
+  id_lugar_trabajo NUMBER(10) not null
+)
+tablespace FM_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table CARGO
+  add constraint PK_CARGO primary key (ID_CARGO, ID_LUGAR_TRABAJO)
+  using index 
+  tablespace FM_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table CARGO
+  add constraint FK_LUGAR_TRABAJO foreign key (ID_LUGAR_TRABAJO)
+  references LUGAR_TRABAJO (ID_LUGAR_TRABAJO);

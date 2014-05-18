@@ -1,0 +1,37 @@
+-- Create table
+create table ENTIDAD
+(
+  nombre          VARCHAR2(21),
+  cedula_juridica NUMBER(10),
+  id_direccion    NUMBER(10),
+  id_entidad      NUMBER(10) not null
+)
+tablespace FM_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table ENTIDAD
+  add constraint PK_ENTIDAD primary key (ID_ENTIDAD)
+  using index 
+  tablespace FM_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table ENTIDAD
+  add constraint FK_DIRECCION foreign key (ID_DIRECCION)
+  references DIRECCION (ID_DIRECCION);

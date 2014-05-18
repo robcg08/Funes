@@ -1,0 +1,39 @@
+-- Create table
+create table TRABAJOXPERSONA
+(
+  cedula           NUMBER(10) not null,
+  id_cargo         NUMBER(10) not null,
+  id_lugar_trabajo NUMBER(10) not null
+)
+tablespace FM_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TRABAJOXPERSONA
+  add constraint PK_TRABAJOXPERSONA primary key (CEDULA, ID_CARGO, ID_LUGAR_TRABAJO)
+  using index 
+  tablespace FM_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table TRABAJOXPERSONA
+  add constraint FK_CARGO_AND_LUGAR_TRABAJO foreign key (ID_CARGO, ID_LUGAR_TRABAJO)
+  references CARGO (ID_CARGO, ID_LUGAR_TRABAJO);
+alter table TRABAJOXPERSONA
+  add constraint FK_CEDULA foreign key (CEDULA)
+  references PERSONA (CEDULA);

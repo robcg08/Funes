@@ -1,0 +1,38 @@
+-- Create table
+create table DISTRITO
+(
+  id_distrito  NUMBER(10) not null,
+  id_canton    NUMBER(10) not null,
+  id_provincia NUMBER(10) not null,
+  id_pais      NUMBER(10) not null,
+  nombre       VARCHAR2(21)
+)
+tablespace FM_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table DISTRITO
+  add constraint PK_DISTRITO primary key (ID_DISTRITO, ID_CANTON, ID_PROVINCIA, ID_PAIS)
+  using index 
+  tablespace FM_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table DISTRITO
+  add constraint PK_CAN_PROV_PAIS foreign key (ID_CANTON, ID_PROVINCIA, ID_PAIS)
+  references CANTON (ID_CANTON, ID_PROVINCIA, ID_PAIS);

@@ -1,0 +1,34 @@
+-- Create table
+create table REVIEW
+(
+  id_review    NUMBER(10) not null,
+  review       VARCHAR2(21),
+  calificacion NUMBER(10),
+  evidencia    VARCHAR2(100)
+)
+tablespace FM_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table REVIEW
+  add constraint PK_REVIEW primary key (ID_REVIEW)
+  using index 
+  tablespace FM_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
