@@ -1,0 +1,100 @@
+
+body{
+    background: url(/funes/Interfaz/img/background.jpg) no-repeat center center fixed;
+    font-family: 'Inder', sans-serif;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Patua One',sans-serif;
+}
+
+.containerBody{
+    background-size: cover;
+    -webkit-background-size: cover;
+    height: 1000px;
+    margin-bottom: 15px;
+}
+
+
+.mainBody{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+.divRegistro {
+    text-align: center;
+    z-index: 1;
+    height: auto;
+    width: 620px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.85);
+    padding-bottom: 30px;
+    margin: 20px auto 0 auto;
+    border: 3px solid #2e7dcc;
+    -webkit-box-shadow: 5px 5px 10px #717480;
+    border-radius: 10px;
+}
+
+
+.divForm{
+    text-align: left;
+}
+
+.formRegistroUsuarios{
+    margin-left: 50px;
+}
+.formRegistroUsuarios input[type="text"],input[type="password"], select ,input[type="date"]{
+    width: 399px;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #BDC7D8;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    text-indent: 12px;
+}
+
+.formRegistroUsuarios p {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Oxygen', sans-serif;
+}
+.datos label{
+    font-family: 'Oxygen', sans-serif;
+    width: auto;
+    margin: 0;
+    font-size: 1.30em;
+}
+
+.datos input[type="radio"]{
+    height: 1.25em;
+    width: 1.25em;
+}
+.submit{
+    margin-right: 60px;
+    text-align: right;
+}
+.btnRegistrar {
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 1.25em;
+    margin: 20px auto auto auto;
+    width: 270px;
+    height: 50px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+.btnRegistrar:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnDoRegistrar:focus {
+    outline: 0px;
+}
+.si{
+    float: left;
+}
+
