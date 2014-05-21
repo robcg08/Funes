@@ -1,7 +1,8 @@
 -- Create table
-create table BAN
+create table BLOQUEO
 (
-  id_ban                      NUMBER(10) not null,
+  id_bloqueo                  NUMBER not null,
+  fecha_caducacion            DATE,
   usuario                     VARCHAR2(21),
   fec_ultima_modificacion     DATE,
   usuario_ultima_modificacion VARCHAR2(10),
@@ -11,29 +12,15 @@ create table BAN
 tablespace FM_DATA
   pctfree 10
   initrans 1
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+  maxtrans 255;
 -- Create/Recreate primary, unique and foreign key constraints 
-alter table BAN
-  add constraint PK_BAN primary key (ID_BAN)
+alter table BLOQUEO
+  add constraint PK_BLOQUEO primary key (ID_BLOQUEO)
   using index 
   tablespace FM_DATA
   pctfree 10
   initrans 2
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
-alter table BAN
-  add constraint FK_USUA foreign key (USUARIO)
+  maxtrans 255;
+alter table BLOQUEO
+  add constraint FK_USER foreign key (USUARIO)
   references USUARIO (USUARIO);

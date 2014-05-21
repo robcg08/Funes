@@ -1,0 +1,21 @@
+-- Create table
+create table PERFILXUSUARIO
+(
+  id_perfil                   NUMBER(10) not null,
+  usuario                     VARCHAR2(21),
+  fec_ultima_modificacion     DATE,
+  usuario_ultima_modificacion VARCHAR2(10),
+  fec_creacion                DATE,
+  usuario_creacion            VARCHAR2(10)
+)
+tablespace FM_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255;
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table PERFILXUSUARIO
+  add constraint FK_PER_ID foreign key (ID_PERFIL)
+  references PERFIL (ID_PERFIL);
+alter table PERFILXUSUARIO
+  add constraint FK_PER_US foreign key (USUARIO)
+  references USUARIO (USUARIO);
