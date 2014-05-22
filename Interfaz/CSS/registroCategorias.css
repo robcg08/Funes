@@ -1,0 +1,79 @@
+body{
+    font-family: 'Patua One',sans-serif;
+}
+
+.containerBody{
+    background-size: cover;
+    -webkit-background-size: cover;
+    height: 1000px;
+    margin-bottom: 15px;
+}
+
+
+.mainBody{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+.divRegistro {
+    text-align: center;
+    z-index: 1;
+    height: auto;
+    width: 620px;
+    position: relative;
+    padding-bottom: 30px;
+    margin: 20px auto 0 auto;
+}
+.divForm{
+    text-align: left;
+}
+
+.formRegistroCategorias{
+    margin-left: 50px;
+}
+.formRegistroCategorias input[type="text"]{
+    width: 399px;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #BDC7D8;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    text-indent: 12px;
+}
+
+.formRegistroCategorias p {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.submit{
+    margin-right: 60px;
+    text-align: right;
+}
+.btnRegistrar {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    margin: 20px auto auto auto;
+    width: 270px;
+    height: 50px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+.btnRegistrar:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnDoRegistrar:focus {
+    outline: 0px;
+}
+
+.categorias{
+    margin-top: 60px;
+    text-align: center;
+    border-bottom: 1px solid #2e7dcc;
+}
