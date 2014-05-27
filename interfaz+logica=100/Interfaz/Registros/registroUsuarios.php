@@ -3,8 +3,8 @@
 
 <head>
 
-
     <script>
+
     function loadXMLDoc(cedula)
     {
         var url = "cedula="+cedula;
@@ -29,6 +29,38 @@
         xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xmlhttp.send(url);
     }
+    function checkUsuario(usuario)
+    {
+        var url = "usuario="+usuario;
+
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+          {// code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp=new XMLHttpRequest();
+          }
+        else
+          {// code for IE6, IE5
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+        xmlhttp.onreadystatechange=function()
+          {
+          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+            document.getElementById("us").innerHTML=xmlhttp.responseText;
+            }
+          }
+        xmlhttp.open("POST","checkUsuario.php",true);
+        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.send(url);
+    }
+    function send(esta,existe){
+      if (esta == 1 && existe == 1) {
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
     </script>
 
 
@@ -46,19 +78,19 @@
             <div class="divRegistro">
                 <h1>Registro de Usuario</h1>
                 <div class="divForm">
-                    <form class="formRegistroUsuarios" action="insertar_usuario.php" method="post">
+                    <form class="formRegistroUsuarios" action="insertar_usuario.php"  onsubmit = "return send(esta.value,existe.value);" method="post">
                         <div>
                             <p>Nombre de Usuario</p>
-                            <input type="text" name = "usuario" id = "usuario">
+                            <input type="text" name = "usuario" id = "usuario" onkeyup="checkUsuario(this.value)" required>
                         </div>
+                        <div id="us"></div>
                         <div>
                             <p>Contraseña</p>
-                            <input type="password" name = "pass" id = "pass">
+                            <input type="password" name = "pass" id = "pass" required>
                         </div>
                         <div>
                             <p>Cédula</p>
-                            <input type="text" name = "cedula" id = "cedula">
-                            <input type="button" value="ver si ya esta registrado" onclick = "loadXMLDoc(cedula.value)">
+                            <input type="text" name = "cedula" id = "cedula" onkeyup="loadXMLDoc(cedula.value)" required>
                         </div>
                         <div id="myDiv"></div>
                         <div class="datos">

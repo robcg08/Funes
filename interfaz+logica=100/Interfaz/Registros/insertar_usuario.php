@@ -29,7 +29,7 @@ oci_bind_by_name($stid, ':p', $password);
 oci_bind_by_name($stid, ':v', $privado);
 oci_bind_by_name($stid, ':c', $cedula);
 
-//oci_execute($stid);
+oci_execute($stid);
 
 
 

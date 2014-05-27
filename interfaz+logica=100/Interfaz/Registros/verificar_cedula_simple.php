@@ -24,13 +24,12 @@ while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
 }
 
 if ($existe) {
-	echo "Esta cedula ya exite puede continuar";
-	echo "<input name='existe' type='hidden' value='1'>";
+	echo "Esta cedula ya exite,digite otra";
+	echo "<input name='existe' type='hidden' value='0'>";
 }
 else{
-	echo "Porfavor ingrese mas datos";
-	echo "<a href='/funes/Interfaz/Registros/registroPersonas_usuario.php'> registrar aqui</a>";
-	echo "<input name='existe' type='hidden' value='0'>";
+	echo "Esta cedula esta disponible";
+	echo "<input name='existe' type='hidden' value='1'>";
 }
 
 
