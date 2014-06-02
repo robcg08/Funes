@@ -1,0 +1,103 @@
+body{
+    font-family: 'Patua One',sans-serif;
+}
+
+.containerBody{
+    background-size: cover;
+    -webkit-background-size: cover;
+    height: 1000px;
+    margin-bottom: 15px;
+}
+
+
+.mainBody{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+.divRegistro {
+    text-align: center;
+    z-index: 1;
+    height: auto;
+    width: 620px;
+    position: relative;
+    padding-bottom: 30px;
+    margin: 20px auto 0 auto;
+}
+
+.divForm{
+    text-align: left;
+}
+
+.formConsultas{
+    margin-left: 50px;
+}
+/*
+.formConsultas input[type="text"], select {
+    float: left;
+    width: 198px;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid #BDC7D8;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    text-indent: 12px;
+}
+*/
+
+.formConsultas p {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.btnConsultas{
+    float: right;
+    clear: left;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    margin: 20px auto auto auto;
+    width: 270px;
+    height: 50px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+.btnConsultas:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnConsultas:focus {
+    outline: 0px;
+}
+
+
+.nom input[type="text"]{
+    float: left;
+    width: 198px;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid #BDC7D8;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    text-indent: 12px;
+}
+
+.tipo select{
+    float: left;
+    width: 198px;
+    height: 44px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid #BDC7D8;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    text-indent: 12px;
+}
