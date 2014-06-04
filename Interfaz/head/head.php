@@ -1,20 +1,52 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Mi Perfil</a></li>
-                <li>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Buscar</button>
-                    </form>
-                </li>
-            </ul>
-        </div>
-    </div>
-  </div>
-</nav>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="../CSS/head.css" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Oxygen:300,400' rel='stylesheet' type='text/css'>
+    </head>
+
+
+    <body>
+        <header>
+            <div class="navbar" >
+                <div class="logo">
+                    <h1>LOGO</h1>
+                </div>
+                <div class="links">
+                    <ul class="nav">
+                        <li>
+                            <a href="#">Personas</a>
+                        </li>
+                        <li>
+                            <a href="#">Entidades</a>
+                        </li>
+                        <li>
+                            <a href="#">Categorias</a>
+                        </li>
+                        <li class="search">
+                            <form class="formSearch" role="search">
+                                <input type="text" class="txtBuscar" placeholder="Buscar">
+                                <input type="submit" class="btnBuscar" value="">
+                            </form>
+                        </li>
+
+                        <li class="editar">
+                            <img src="../img/settings.svg">
+                            <ul class="subEditar">
+                                <li class="perfil"><a href="#">Mi perfil</a></li>
+                                <li><a href="#">Salir</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </body>
+
+</html>
+
+
+
+
