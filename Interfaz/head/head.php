@@ -23,6 +23,9 @@
                             <a href="#">Entidades</a>
                         </li>
                         <li>
+                            <a href="#">Persona Categorias</a>
+                        </li>
+                        <li>
                             <a href="#">Categorias</a>
                         </li>
                         <li class="search">
@@ -33,11 +36,14 @@
                         </li>
 
                         <li class="editar">
-                            <img src="../img/settings.svg">
+
+                                <img src="../img/settings.svg">
+
                             <ul class="subEditar">
                                 <li class="perfil"><a href="#">Mi perfil</a></li>
                                 <li><a href="#">Salir</a></li>
                             </ul>
+
                         </li>
                     </ul>
                 </div>

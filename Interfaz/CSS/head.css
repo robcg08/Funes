@@ -1,12 +1,14 @@
 body{
     font-family: 'Patua One',sans-serif;
+    width: 1366px;
+
 }
 .navbar {
     background: #232323;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     height: 80px;
-    margin: 10px 100px;
+    margin: 10px 70px;
 }
 .logo {
     width: 150px;
@@ -19,15 +21,18 @@ body{
     text-align: center;
 }
 .links {
+    width: 1076px;
     height: 80px;
-    float: right;
+    float: left;
 }
 
 .nav {
     margin: 0;
+    width: 100%;
     height: 80px;
-    float: right;
+    float: left;
     display: inline-block;
+    padding-left: 0;
 }
 .nav li {
     float: left;
@@ -35,11 +40,11 @@ body{
     position: relative;
 }
 .nav li a {
-    font-size: 1.25em;
+    font-size: 1.15em;
     color: white;
     display: block;
     line-height: 80px;
-    padding: 0 26px;
+    padding: 0 20px;
     text-decoration: none;
     border-right: 1px solid #2e2e2e;
     font-family: 'Oxygen', sans-serif;
@@ -55,9 +60,9 @@ body{
 .formSearch input[type="text"] {
     margin: 14px;
     border-radius: 5px;
-    width: 299px;
+    width: 259px;
     padding: 15px 0 15px 20px;
-    font-size: 1.25em;
+    font-size: 1.15em;
     font-family: 'Oxygen', sans-serif;
     border: 0 none;
     height: 52px;
@@ -87,7 +92,9 @@ body{
 }
 
 .editar{
-    float: right;
+    height: 80px;
+    width: 16.07%;
+    max-width:173px;
 }
 .editar img{
     margin: 24px;
@@ -104,7 +111,7 @@ body{
     position: absolute;
     top: 90%;
     right: 0;
-    width: 200px;
+    width: 223px;
     height: auto;
     opacity: 0;
     transition: all 0.1s;
