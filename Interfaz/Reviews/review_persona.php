@@ -85,19 +85,24 @@
                                 <div class="rate">
                                     <?php
 
-                                        $stid2 = oci_parse($conn, 'begin :result := get_promedio_reviews_entidad(:idd); end;');
-                                        oci_bind_by_name($stid2, ':idd', $id);
+                                        $stid2 = oci_parse($conn, 'begin :result := get_promedio_reviews_persona(:cedula); end;');
+                                        oci_bind_by_name($stid2, ':cedula', $cedula);
 
                                         oci_bind_by_name($stid2, ':result', $result4, 40);
                                         oci_execute($stid2);
+
+                                        if($result4 == ""){
+                                            $result4 == 0;
+                                            echo $result4;
+                                        }
                                         echo "<div id='rateid1' class='rateit' data-rateit-step='0.5' data-rateit-max=10 data-rateit-readonly='true' data-rateit-value=".$result4."></div>"
 
                                     ?>
                                 </div>
                                 <div class="total">
                                     <?php
-                                        $stid2 = oci_parse($conn, 'begin :result := get_total_reviews_entidad(:idd); end;');
-                                        oci_bind_by_name($stid2, ':idd', $id);
+                                        $stid2 = oci_parse($conn, 'begin :result := get_total_reviews_persona(:cedula); end;');
+                                        oci_bind_by_name($stid2, ':cedula', $cedula);
 
                                         oci_bind_by_name($stid2, ':result', $result3, 40);
                                         oci_execute($stid2);
@@ -160,9 +165,9 @@
                                         <?php
 
                                             for ($i = 10; $i >= 1; $i--) {
-                                                $stid2 = oci_parse($conn, "begin :result := get_clasificacion_entidad(:c,:id);  end;");
+                                                $stid2 = oci_parse($conn, "begin :result := get_clasificacion_persona(:c,:cedula);  end;");
                                                 oci_bind_by_name($stid2, ':c', $i);
-                                                oci_bind_by_name($stid2, ':id', $id);
+                                                oci_bind_by_name($stid2, ':cedula', $cedula);
                                                 oci_bind_by_name($stid2, ':result', $result2, 40);
                                                 oci_execute($stid2);
 
@@ -192,16 +197,29 @@
                             </div>
                             <div class="calificar2">
                                 <?php
-                                    $usuarioActual = "juan112";
-                                    $stid = oci_parse($conn,"select review_entidad.usuario
-                                                            from review_entidad
+                                    $usuario ="juan11";
+                                    $usuarioActual = "juan11";
+                                    $stid = oci_parse($conn,"select review_persona.usuario
+                                                            from review_persona
                                                             inner join review
-                                                            on review_entidad.id_review = review.id_review
-                                                            where review_entidad.id_entidad =".$id);
+                                                            on review_persona.id_review = review.id_review
+                                                            where review_persona.cedula =".$cedula);
                                     oci_execute($stid);
+
+                                    if($usuarioActual == $usuario){
+
+                                        echo "<script type='text/javascript'>";
+                                            echo "$(function (){ $('.btnCalificar').css('background','grey');
+                                            $('.btnCalificar').hover(function(){
+                                            $(this).css('cursor','default')});
+                                            $('.formCalificar').get(0).setAttribute('action', '#');
+                                            });";
+                                            echo "</script>";
+
+                                    }
                                     while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)){
 
-                                        if($row['USUARIO'] == $usuarioActual){
+                                        if($row['USUARIO'] == $usuarioActual ){
 
 
                                             echo "<script type='text/javascript'>";
@@ -230,11 +248,11 @@
                             <div class="calificaciones2">
                                  <?php
 
-                                      $stid = oci_parse($conn, "select review_entidad.usuario,review.calificacion,review.review,review.evidencia
-                                                                from review_entidad
+                                      $stid = oci_parse($conn, "select review_persona.usuario,review.calificacion,review.review,review.evidencia
+                                                                from review_persona
                                                                 inner join review
-                                                                on review_entidad.id_review = review.id_review
-                                                                where review_entidad.id_entidad =".$id);
+                                                                on review_persona.id_review = review.id_review
+                                                                where review_persona.cedula =".$cedula);
 
                                       oci_execute($stid);
                                     echo "<ul>";
