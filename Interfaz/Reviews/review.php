@@ -161,7 +161,7 @@
 
                         <div class="calificar">
                             <div class="calificarTxt">
-                                <h1>Calificar</h1>
+                                <h1>Calificar | Reportar</h1>
                             </div>
                             <div class="calificar2">
                                 <?php
@@ -192,6 +192,9 @@
 
                                 <form action="calificar.php" class="formCalificar">
                                     <input type="submit" class="btnCalificar" value="Calificar">
+                                </form>
+                                <form action="reportar.php" class="formCalificar">
+                                    <input type="submit" class="btnReportar" value="Reportar">
                                 </form>
                             </div>
                         </div>
@@ -228,7 +231,7 @@
                                         if ($row['EVIDENCIA'] == null){
                                             echo  "<p class='noDisp'>NO DISPONIBLE</p>";
                                         }else{
-                                            echo "<form action='ver_evidencia.php'' method = 'post'' enctype='multipart/form-data'>";
+                                            echo "<form action='ver_evidencia.php' method = 'post' enctype='multipart/form-data'>";
                                             echo "<input type='text' class='txtFile' name='uploaded_file1' value=".$row['EVIDENCIA'].">";
                                             echo  "<input type='submit' class='btnEvidencia' value='Ver'>";
                                             echo "</form>";
