@@ -193,7 +193,7 @@
 
                         <div class="calificar">
                             <div class="calificarTxt">
-                                <h1>Calificar</h1>
+                                <h1>Calificar | Reportar</h1>
                             </div>
                             <div class="calificar2">
                                 <?php
@@ -237,6 +237,9 @@
 
                                 <form action="calificar.php" class="formCalificar">
                                     <input type="submit" class="btnCalificar" value="Calificar">
+                                </form>
+                                <form action="reportar.php" class="formCalificar">
+                                    <input type="submit" class="btnReportar" value="Reportar">
                                 </form>
                             </div>
                         </div>
