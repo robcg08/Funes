@@ -45,7 +45,7 @@
                         <form class="formConsultas">
                             <div class="nom">
                                 <p>Buscar Persona</p>
-                                <input type="text" name = "nombre" id = "nombre">
+                                <input type="text" name = "nombre" id = "nombre" onkeyup="loadXMLDoc(nombre.value,filtro.value)">
                             </div>
                             <div class="tipo">
                                 <select name = "filtro" id="filtro" >

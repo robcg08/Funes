@@ -1,0 +1,86 @@
+body{
+    font-family: 'Patua One',sans-serif;
+}
+
+.containerBody{
+    background-size: cover;
+    -webkit-background-size: cover;
+    height: 1000px;
+    margin-bottom: 15px;
+}
+
+.mainBody{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.numCalf{
+    display: none;
+}
+
+.divRegistro {
+    text-align: center;
+    z-index: 1;
+    height: auto;
+    width: 620px;
+    position: relative;
+    padding-bottom: 30px;
+    margin: 20px auto 0 auto;
+}
+
+.divForm{
+    text-align: left;
+}
+
+.formCalificar{
+    margin-left: 50px;
+}
+
+
+.comentario{
+    width: 460px;
+    height: 80px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #BDC7D8;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    text-indent: 12px;
+    resize: none;
+}
+.formCalificar input[type="file"]{
+    width: 399px;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+}
+
+.formCalificar p {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Oxygen', sans-serif;
+}
+.submit{
+    margin-right: 60px;
+    text-align: right;
+}
+.btnCalificar {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    margin: 20px auto auto auto;
+    width: 270px;
+    height: 50px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+.btnCalificar:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnCalificar:focus {
+    outline: 0px;
+}

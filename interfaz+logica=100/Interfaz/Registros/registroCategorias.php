@@ -33,22 +33,6 @@ if (!$conn) {
                                 <p>Nombre</p>
                                 <input type="text" name = 'nombre' id='nombre'>
                             </div>
-                             <div>
-                                  <p>Tipo Categoría</p>
-                                  <?php
-
-                                  $stid = oci_parse($conn, "select * from tipo_categoria");
-
-                                  oci_execute($stid);
-
-                                  echo "<select name = 'tipo_categoria' id='tipo_categoria' >";
-                                  while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
-                                    echo"<option value=".$row['ID_TIPO_CATEGORIA'].">".$row['NOMBRE']."</option>";
-                                  }
-                                  echo "</select>";
-                                  ?>
-                                  <input type="button" value="--" onclick="menosmenos()">
-                                </div>
                             <div class="submit">
                                 <input type="submit" class="btnRegistrar" value="Registrar">
                             </div>
@@ -56,7 +40,30 @@ if (!$conn) {
                         <div class="categorias">
                             <h1>Categorías Registradas</h1>
                         </div>
-                        <!-- mostrar una tabla con las categorias registradas -->
+                        <?php
+                        $stid = oci_parse($conn, "SELECT consultas.get_categorias(1) AS mfrc FROM dual");
+                        oci_execute($stid);
+
+                        echo "
+                          </form>
+                          <table border='1'>
+                          <tr>
+                            <th>Categoria</th>
+                          </tr>";
+
+                          while (($fila = oci_fetch_array($stid, OCI_ASSOC))) {
+                              $rc = $fila['MFRC'];
+                              oci_execute($rc);
+                              while (($fila_rc = oci_fetch_array($rc, OCI_ASSOC))) {
+                                  echo "<tr>\n";
+                                  echo "<td>" . $fila_rc['NOMBRE'] . "</td>\n";
+                                  echo "</tr>\n";
+                              }
+                              oci_free_statement($rc);
+                          }
+                          echo "</table>";
+
+                        ?>                       <!-- mostrar una tabla con las categorias registradas -->
                     </div>
                 </div>
             </div>

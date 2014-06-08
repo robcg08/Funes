@@ -201,6 +201,7 @@ if (!$conn) {
                                   }
                                   echo "</select>";
                                   ?>
+                                  <input type="button" value="-" onclick="menosmenos()">
                                   <br>
                                   <a href='/funes/Interfaz/Registros/registroCategorias.php'> Registrar Categoria</a>
                                 </div>

@@ -165,11 +165,13 @@ if (!$conn) {
                                   }
                                   echo "</select>";
                                   ?>
+                                  <input type="button" value="-" onclick="menosmenos()">
+                                  <br>
+                                  <div id="txtHint"><b></b></div>
                                   <br>
                                   <a href='/funes/Interfaz/Registros/registroCategorias.php'> Registrar Categoria</a>
 
                                 </div>
-                                <div id="txtHint"><b></b></div>
                                 <div class="submit">
                                     <input type="submit" class="btnRegistrar" value="Registrar">
                                 </div>

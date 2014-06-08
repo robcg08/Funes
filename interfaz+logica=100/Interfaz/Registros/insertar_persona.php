@@ -39,7 +39,7 @@ echo $cargo;
 echo "----";
 print_r($categoria);
 
-/*
+
 
 $stid = oci_parse($conn, "insert into persona(cedula, nombre, primer_apellido, segundo_apellido, genero, fecha_nacimiento)
 	values (:c, :n, :a, :p, :g, date '".$fechaN."')");
@@ -90,6 +90,6 @@ for ($i=0; $i < sizeof($categoria); $i++){
 }
 
 echo "listo";
-*/
+
 
 ?>
