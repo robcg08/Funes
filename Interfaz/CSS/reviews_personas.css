@@ -1,0 +1,239 @@
+body {
+    font-family: 'Patua One', sans-serif;
+    background: #F6F8F8;
+}
+.containerBody {
+    background-size: cover;
+    -webkit-background-size: cover;
+    height: 1000px;
+    margin-bottom: 15px;
+    margin-top: -10px;
+}
+.mainBody {
+    height: 100%;
+    margin-left: 100px;
+    margin-right: 100px;
+    border: 1px solid #F1F1F1;
+    background: #FFF;
+}
+.divRegistro {
+    text-align: left;
+    z-index: 1;
+    height: auto;
+    width: 850px;
+    position: relative;
+    padding-bottom: 30px;
+    margin: 20px auto 0 140px;
+    margin-right: 0px;
+}
+.divForm {
+    text-align: left;
+}
+.rate {
+    margin-top: 10px;
+    margin-left: 20px;
+    float: left;
+    clear: left;
+}
+
+.name{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.total {
+    margin-top: 9px;
+    float: left;
+}
+.total p {
+    margin: 0;
+    margin-left: 10px;
+}
+.calificar {
+    float: left;
+    width: 400px;
+    text-align: center;
+}
+.calificarTxt {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    background: #2e7dcc;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 200px;
+}
+.calificarTxt h1 {
+    text-align: center;
+    margin: 0;
+    margin-left: 4px;
+}
+
+.calificacionesTxt {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    background: #2e7dcc;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.calificacionesTxt h1 {
+    margin: 0;
+    margin-left: 4px;
+}
+.entidad {
+    border: 3px solid #2e7dcc;
+    border-top-right-radius:  10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 200px;
+    width: 400px;
+}
+.btnCalificar {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    margin: 80px auto auto auto;
+    width: 270px;
+    height: 50px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+.btnCalificar:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnCalificar:focus {
+    outline: 0px;
+}
+.calificaciones {
+    clear: left;
+    float: left;
+    text-align: center;
+    margin-top: 20px;
+    width: 101%;
+}
+.calificaciones2 {
+    border: 1px solid #BDC7D8;
+    text-align: center;
+    width: 99.8%;
+    height: auto;
+    clear: left;
+    float: left
+}
+.calificaciones2 ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    float: left;
+    clear: left;
+}
+.calificaciones2 ul li {
+    height: 210px;
+    border-bottom: 1px solid #BDC7D8;
+}
+.calificaciones p {
+    text-align: left;
+}
+.noDisp {
+    margin-left: 20px;
+}
+.comentario {
+    float: left;
+    clear: left;
+    font-size: 1.25em;
+    margin-left: 30px;
+    font-family: 'Lobster Two', cursive;
+}
+.calf {
+    margin-left: 30px;
+    margin-top: 20px;
+    float: left;
+    border-right: 1px solid #BDC7D8;
+}
+.evidencia {
+    margin-left: 30px;
+    float: left;
+    clear: left;
+}
+.usuario {
+    margin-top: 20px;
+    float: left;
+    margin-left: 10px;
+}
+.usuario h3 {
+    margin: 0;
+}
+.btnEvidencia {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1em;
+    margin: 5px;
+    width: 100px;
+    height: 30px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.txtFile {
+    display: none;
+}
+.btnEvidencia:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnEvidencia:focus {
+    outline: 0px;
+}
+#rateReview {
+    margin: 5px;
+}
+.calificar2 {
+    border: 3px solid #2e7dcc;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius:  10px;
+    height: 200px;
+}
+
+.pruebaReview {
+
+    float: left;
+    width: 450px;
+}
+
+
+.datos{
+    margin-left: 20px;
+}
+.cedula{
+    float: left;
+    clear: left;
+}
+
+.cedula p, h3{
+    margin: 0;
+}
+
+.genero{
+    float: left;
+    clear: left;
+}
+
+.genero p, h3{
+    margin: 0;
+}
+
+.fecha{
+    float: left;
+    clear: left;
+}
+
+.fecha p, h3{
+    margin: 0;
+}
+
