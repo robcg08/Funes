@@ -3,7 +3,6 @@ create table CATEGORIA
 (
   id_categoria                NUMBER(10) not null,
   nombre                      VARCHAR2(21),
-  id_tipo_categoria           NUMBER(10),
   fec_ultima_modificacion     DATE,
   usuario_ultima_modificacion VARCHAR2(10),
   fec_creacion                DATE,
@@ -35,6 +34,3 @@ alter table CATEGORIA
     minextents 1
     maxextents unlimited
   );
-alter table CATEGORIA
-  add constraint FK_TIPO_CATEGORIA foreign key (ID_TIPO_CATEGORIA)
-  references TIPO_CATEGORIA (ID_TIPO_CATEGORIA);
