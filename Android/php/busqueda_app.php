@@ -1,39 +1,43 @@
 <!DOCTYPE html>
     <?php
-        $conn = oci_connect('fm', 'fm', 'localhost/funar');
+        $conn = oci_connect('fm', 'fm', 'localhost/funar'); // Coneccion a la base de datos ('usuario', 'password', 'base d datos')
         if (!$conn) {
             $e = oci_error();
             trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
         }
 
-        $modo = $_POST['modo'];
-        $bus = $_POST['busqueda'];
-        $col = $_POST['columna'];
+        $modo = $_POST['modo'];      // "Persona" o "Entidad"
+        $bus = $_POST['busqueda'];  // Lo que se quiere buscar ya sea nombre apellidos cedula juridica...
+        $col = $_POST['columna'];  // nombre de la columna en la cual se va a ver si hay coincidencia con $bus
 
         if ($modo == "Persona"){
-            $pk = "CEDULA";
+            $pk = "CEDULA";                                           // PK de la tabla Persona
+            $todo = ", nombre, primer_apellido, segundo_apellido ";  // columnas a seleccionar en el select
         } else {
-            $pk = "ID_ENTIDAD";
+            $pk = "ID_ENTIDAD";                      // PK de la tabla Entidad
+            $todo = ", nombre ,cedula_juridica ";   // columnas a seleccionar en el select
         }
 
-        echo "$modo/$bus/$col/$pk";
+        $stid = oci_parse($conn, "SELECT ". $pk . $todo ."FROM ". $modo . " where " . $col . "= '" . $bus . "' order by nombre"); // select
+        oci_execute($stid);                                                                                                      // Se ejecuta el select
 
-        $stid = oci_parse($conn, "SELECT ". $pk . " FROM ". $modo . " where " . $col . "= '" . $bus . "'");
-        oci_execute($stid);
-
-        echo "primer execute-";
+        echo ">"; // separador con el "<!DOCTYPE html>"
 
         while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)){
+            // Por cada fila en la que hay coincidencia:
 
-            echo"Segundo execute";
-            $cedula = $row[$pk];
-            echo "$cedula/";
+            $cedula = $row[$pk]; // llave primaria del dato que se encontro
+            echo "$cedula ";    // se imprime con el separador " "
 
-            $stid1 =  oci_parse($conn, "select review_". $modo .".usuario,review.calificacion,review.review,review.evidencia from review_". $modo ." inner join review on review_". $modo .".id_review = review.id_review where review_". $modo . "." .$pk . "= " .$cedula); // PERSONA
-            oci_execute($stid1);
-
-            $row1 = oci_fetch_array($stid1, OCI_ASSOC+OCI_RETURN_NULLS);
-            $review = $row1['REVIEW'];
-            echo "$review+";
+            if ($modo == "Persona"){
+                $nombre = $row['NOMBRE'];          // Nombre de la persona
+                $pap = $row['PRIMER_APELLIDO'];   // Primer apellido de la persona
+                $sap = $row['SEGUNDO_APELLIDO']; // Segundo apellido de la persona
+                echo "$nombre $pap $sap%";      // echo de variables separadas por " " y separadas por la siguiente fila por "%"
+            } else {
+                $nombre = $row['NOMBRE'];              // Nombre de la entidad
+                $cedjud = $row['CEDULA_JURIDICA'];    // cedula juridica de la entidad
+                echo "$nombre $cedjud%";             // echo de variables separadas por " " y separadas por la siguiente fila por "%"
+            }
         }
     ?>
