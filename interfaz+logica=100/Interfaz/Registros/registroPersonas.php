@@ -38,6 +38,31 @@ if (!$conn) {
                 xmlhttp.send(url);
             }
 
+            function fechaa(fecha)
+            {
+                var url = "fecha="+fecha;
+
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                  {// code for IE7+, Firefox, Chrome, Opera, Safari
+                  xmlhttp=new XMLHttpRequest();
+                  }
+                else
+                  {// code for IE6, IE5
+                  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                xmlhttp.onreadystatechange=function()
+                  {
+                  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                    {
+                    document.getElementById("fecha").innerHTML=xmlhttp.responseText;
+                    }
+                  }
+                xmlhttp.open("POST","test_edad.php",true);
+                xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                xmlhttp.send(url);
+            }
+
             function showUser(str)
             {
             var url = "persona_categoria.php?q="+str;
@@ -129,7 +154,7 @@ if (!$conn) {
                                 </div>
                                 <div>
                                     <p>Cédula</p>
-                                    <input type="text" name = "cedula" id="cedula" onkeyup="loadXMLDoc(cedula.value)" required>
+                                    <input type="text" name = "cedula" id="cedula" maxlength="9" onkeyup="loadXMLDoc(cedula.value)" required>
                                 </div>
                                 <div id="myDiv"></div>
                                 <div>
@@ -151,6 +176,7 @@ if (!$conn) {
                                     <p>Fecha de Nacimiento</p>
                                     <input type="date" name = "fecha" id="fecha" required>
                                 </div>
+                                <div id="fechaa"></div>
                                 <div>
                                   <p>Categoría</p>
                                   <?php

@@ -1,0 +1,110 @@
+Pequeño tutorial para escribir y leer archivos de texto con Python
+
+
+Usar archivos de texto para guardar datos nos puede ser muy útil, porque en ellos podemos guardar datos que deben permanecer guardados incluso después de haber cerrado el programa. 
+
+Para esto Python tiene una función que se llama “open”, esta función recibe 2 argumentos, el primero es la dirección del archivo (ej: “C:\User\Desktop\archivo.txt”) y el segundo es el modo en el que se va a abrir el archivo. El modo puede ser “r” (de read) o “w” (de write). Si usamos “r” solo podremos leer datos del archivo y si usamos “w” solo podremos escribir datos en el archivo. Para poder usar este archivo más adelante debemos de asignarlo a una variable.
+
+Ejemplo: Vamos a abrir un archivo de texto en modo de solo escritura y lo asignaremos a una variable que llamaremos “texto”.
+
+CODE: SELECT ALL
+
+texto=open("C:\User\Desktop\archivo.txt ","w")
+
+texto.close()
+
+
+Nota: siempre que terminamos de usar un archivo de texto debemos de guardarlo y cerrarlo, esto lo hacemos con el método “close”.
+
+Nota 2: El modo “w” crea un archivo nuevo, por lo que si este no existe se creara uno nuevo, pero si ya existe se reemplazara por uno nuevo.
+
+Ya teniendo nuestro archivo en una variable podemos proceder a meter datos al archivo, esto se hace con el método “write”, el cual recibe como argumento los datos que queremos escribir, estos datos deben ser strings. 
+Ejemplo: Vamos a escribir en nuestro archivo “Texto de prueba”.
+
+CODE: SELECT ALL
+texto=open("archivo.txt ","w")
+
+texto.write(“Texto de prueba”)
+
+texto.close()
+
+
+Si guardamos este código en un archivo python y lo ejecutamos se debería crear un archivo de texto en la dirección que especificamos, el cual contiene “Texto de prueba”.
+
+Tambien podemos especificar los datos que queremos escribir dentro del archivo por medio de otra variable.
+Ejemplo:
+
+CODE: SELECT ALL
+var_texto="Texto de prueba con variable"
+
+texto=open("archivo.txt ","w")
+
+texto.write(var_texto)
+
+texto.write(“Texto de prueba”)
+
+texto.close()
+
+
+Nota: se pueden escribir varios datos a la vez.
+
+Debemos tomar en cuenta que si volvemos a escribir en el archivo de texto, los datos que estaban guardados en el archivo se borraran, ya que el modo “w” crea el archivo desde cero, por lo que si queremos mantener los datos debemos primero almacenar esos datos en otra variable y luego escribirlos en el archivo junto a los datos nuevos.
+
+
+Ya vimos como escribir datos, pero como podemos usar estos datos en nuestro programa?
+
+Importante: Al usar el método write, los datos se guardaran como un string, por lo que si los importamos solo vamos a tener una cadena de datos sin formato, y para nuestro programa lo que ocupamos son datos con formato, por ejemplo listas o matrices. Para esto necesitaremos importar un modulo llamado “pickle”. 
+
+
+Pickle nos permite guardar datos como números, listas, diccionarios o matrices sin necesidad de convertirlos a strings. El método “pickle.dump” nos permitirá guardar datos en el archivo, este recibe dos argumentos, los datos que queremos guardar y el nombre del archivo; y el método “pickle.load” nos permitirá leer los datos, este recibe como argumento el nombre del archivo. 
+
+Ejemplo: Vamos a escribir en nuestro archivo una lista, luego vamos a imprimir el primer elemento de la listas.
+
+CODE: SELECT ALL
+import pickle
+
+archivo=open("archivo.txt ","w")
+
+pickle.dump([1,2,3,4], archivo)
+
+archivo.close()
+
+archivo=open("archivo.txt ","r")
+
+lista=pickle.load(archivo)
+
+print lista[0]
+
+archivo.close()
+
+
+Nota: si abrimos el archivo de texto podemos notar que este contiene muchos más datos de los que queríamos guardar y además en desorden, algo así: “(lp0 I1 aI2 aI3 aI4 a.”, esto es normal.
+
+
+Con esta información ya vamos a poder trabajar con archivos de texto, y vamos a poder guardar matrices en ellos. 
+
+Ejemplo: vamos a guardar una matiz y luego vamos a imprimir todos los datos de la matriz .
+
+CODE: SELECT ALL
+import pickle
+
+matrizPrincipal=[[0,0,0,0],
+                 [0,1,0,1],
+                 [1,0,1,0],
+                 [1,1,1,1]]
+
+archivo=open("archivo.txt ","w")
+
+pickle.dump(matrizPrincipal, archivo)
+
+archivo.close()
+
+archivo=open("archivo.txt ","r")
+
+matrizTemporal=pickle.load(archivo)
+
+for listas in matrizTemporal:
+   for numeros in listas:
+      print numeros
+
+archivo.close()

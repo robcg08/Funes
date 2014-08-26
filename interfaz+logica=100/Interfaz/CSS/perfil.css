@@ -1,25 +1,29 @@
 body{
     font-family: 'Patua One',sans-serif;
+    background: #F6F8F8;
 }
 
 .containerBody{
     background-size: cover;
     -webkit-background-size: cover;
-    height: 1000px;
+    height: auto;
     margin-bottom: 15px;
+    margin-top: -10px;
 }
 
 
 .mainBody{
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 70px;
+    margin-right: 70px;
+    height: 100%;
+    border: 1px solid #F1F1F1;
+    background: #FFF;
 }
 
 
 .divRegistro {
     text-align: center;
-    z-index: 1;
-    height: auto;
+    height: 100%;
     width: 620px;
     position: relative;
     padding-bottom: 30px;
@@ -27,13 +31,15 @@ body{
 }
 .divForm{
     text-align: left;
+    height: auto;
+    width: auto;
 }
 
 
 .formMiPerfil{
     margin-left: 50px;
 }
-.formMiPerfil input[type="text"]{
+.formMiPerfil input[type="text"],input[type="password"]{
     width: 399px;
     height: 40px;
     border-radius: 5px;
@@ -58,7 +64,7 @@ body{
     font-family: 'Oxygen', sans-serif;
     font-size: 1.25em;
     margin: 20px auto auto auto;
-    width: 270px;
+    width: 240px;
     height: 50px;
     background: #2e7dcc;
     color: white;
@@ -91,25 +97,122 @@ body{
     width: 99.8%;
     height: auto;
     clear: left;
-    float: left
 }
 .reviews2 ul {
     width: 100%;
     padding: 0;
     margin: 0;
     list-style: none;
-    float: left;
     clear: left;
 }
 .reviews2 ul li {
-    height: 210px;
-    border-bottom: 1px solid #BDC7D8;
+    height: 150px;
+    border-top: 1px solid #BDC7D8;
 }
 
 .reviews {
     clear: left;
-    float: left;
     text-align: center;
     margin-top: 20px;
-    width: 101%;
+    width: 100%;
+}
+
+.persona{
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.entidad{
+    width: 100%;
+    height: auto;
+}
+
+.btnCerrarCuenta {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    margin: 20px auto auto auto;
+    width: 240px;
+    height: 50px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    float: left;
+    border-radius: 5px;
+    z-index: 12312312;
+    position: relative;
+    top:-70px;
+}
+.btnCerrarCuenta:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnCerrarCuenta:focus {
+    outline: 0px;
+}
+
+.btnRegistrarEntidad{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    margin: 20px auto auto auto;
+    width: 240px;
+    height: 50px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.btnRegistrarPersona{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    margin: 20px auto auto auto;
+    margin-bottom: 20px;
+    width: 240px;
+    height: 50px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+
+#rateReview{
+    margin-top: 20px;
+}
+
+.btnBorrar {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1em;
+    margin: 5px;
+    width: 100px;
+    height: 30px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.btnBorrar:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnBorrar:focus {
+    outline: 0px;
+}
+
+.btnRegistrarEntidad:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnRegistrarEntidad:focus {
+    outline: 0px;
+}
+
+.btnRegistrarPersona:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnRegistrarPersona:focus {
+    outline: 0px;
 }

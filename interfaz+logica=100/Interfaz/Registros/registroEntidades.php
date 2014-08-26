@@ -1,5 +1,5 @@
 <?php
-$conn = oci_connect('fm', 'fm', 'localhost/funar');
+$conn = oci_connect('fm', 'fm', 'localhost/funar','AL32UTF8');
 if (!$conn) {
     $e = oci_error();
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
@@ -10,6 +10,7 @@ if (!$conn) {
 <html>
 
 <head>
+   <script src="../libs/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script>
 
         var categorias = new Array();
@@ -81,13 +82,12 @@ if (!$conn) {
           {
           if (xmlhttp.readyState==4 && xmlhttp.status==200)
             {
-            document.getElementById("provincia").innerHTML=xmlhttp.responseText;
+            document.getElementById("provincia1").innerHTML=xmlhttp.responseText;
             }
           }
         xmlhttp.open("POST","ajax_pais.php",true);
         xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xmlhttp.send("pais="+pais);
-        changeProvincia(provincia.value);
         }
 
         function changeProvincia(provincia)
@@ -161,13 +161,26 @@ if (!$conn) {
         xmlhttp.send("distrito="+distrito);
         }
 
+
+        $(function(){
+            $('#provincia').change(
+                function(){
+                    changeCanton($('#pais').val());
+                });
+            changePais($('#pais').val());
+            changeProvincia($('#pais').val());
+            changeCanton($('#pais').val());
+            masmas($('#categoria').val());
+            console.log(changePais($('#pais').val()));
+        });
     </script>
 
     <meta charset="utf-8">
     <title>Registro de Entidades</title>
-    <link href="/funes/Interfaz/CSS/registroEntidades.css" rel="stylesheet">
+    <link href="../CSS/registroEntidades.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oxygen:300,400' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
@@ -195,21 +208,29 @@ if (!$conn) {
 
                                   oci_execute($stid);
 
-                                  echo "<select name = 'categoria' id='categoria' onchange='masmas(this.value)'>";
+                                  echo "<select name = 'categoria' id='categoria' class='selCategoria' onchange='masmas(this.value)'>";
                                   while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
-                                    echo"<option value=".$row['ID_CATEGORIA'].">".$row['NOMBRE']."</option>";
+                                    echo"<option onselect='masmas(this.value)' value=".$row['ID_CATEGORIA'].">".$row['NOMBRE']."</option>";
                                   }
                                   echo "</select>";
                                   ?>
-                                  <input type="button" value="-" onclick="menosmenos()">
+                                  <input type="button" class="btnMenos" value="-" onclick="menosmenos()">
                                   <br>
-                                  <a href='/funes/Interfaz/Registros/registroCategorias.php'> Registrar Categoria</a>
+
                                 </div>
-                                <div id="txtHint"><b></b></div>
+                                <div class="catSel">
+                                <p>Categorías Seleccionadas</p>
+                                  <div id="txtHint">
+
+                                  <b></b></div>
+                                  <div>
+                                  <a href='../Registros/registroCategorias.php'> Registrar Categoria</a>
+                                  </div>
+                                </div>
                             <div class="dir">
                                 <h2>Dirección</h2>
                             </div>
-                            <div>
+                            <div class="dir2">
                                 <p>País</p>
                                 <?php
 
@@ -226,21 +247,20 @@ if (!$conn) {
                                 ?>
 
                                 <div class="prov">
-                                    <div class="provincia" id = "provincia">
-
+                                    <div class="provincia" id ="provincia1">
 
                                     </div>
-                                    <div class="canton" id = "canton">
+                                    <div class="canton" id ="canton">
 
 
                                     </div>
                                 </div>
                                 <div class="dis">
-                                    <div class="distrito" id = "distrito">
+                                    <div class="distrito" id ="distrito">
 
 
                                     </div>
-                                    <div class="barrio" id = "barrio">
+                                    <div class="barrio" id ="barrio">
 
 
                                     </div>
@@ -251,6 +271,13 @@ if (!$conn) {
                                 <input type="submit" class="btnRegistrar" value="Registrar">
                             </div>
                         </form>
+                    </div>
+                    <div class="btnRegresar">
+                        <?php
+                            echo "<a href='../Consultas/consultas_entidades.php'>";
+                            echo    '<input type="button" class="btnRegistrar" value="Regresar">';
+                            echo "</a>";
+                        ?>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 body{
     font-family: 'Patua One',sans-serif;
+    background: #F6F8F8;
 }
 
 .containerBody{
@@ -7,12 +8,17 @@ body{
     -webkit-background-size: cover;
     height: 1000px;
     margin-bottom: 15px;
+    margin-top: -10px;
+
 }
 
 
 .mainBody{
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 70px;
+    margin-right: 70px;
+    height: 100%;
+    border: 1px solid #F1F1F1;
+    background: #FFF;
 }
 
 
@@ -20,7 +26,7 @@ body{
     text-align: center;
     z-index: 1;
     height: auto;
-    width: 620px;
+    width: 820px;
     position: relative;
     padding-bottom: 30px;
     margin: 20px auto 0 auto;
@@ -33,20 +39,7 @@ body{
 .formConsultas{
     margin-left: 50px;
 }
-/*
-.formConsultas input[type="text"], select {
-    float: left;
-    width: 198px;
-    height: 40px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    border: 1px solid #BDC7D8;
-    font-family: 'Oxygen', sans-serif;
-    font-size: 1.25em;
-    text-indent: 12px;
-}
-*/
+
 
 .formConsultas p {
     margin: 0;
@@ -54,32 +47,33 @@ body{
     font-family: 'Oxygen', sans-serif;
 }
 
-.btnConsultas{
-    float: right;
-    clear: left;
+.submit{
+    float: left;
+}
+.btnRegistrar{
     font-family: 'Oxygen', sans-serif;
     font-size: 1.25em;
-    margin: 20px auto auto auto;
+    margin: 0 auto auto auto;
     width: 270px;
-    height: 50px;
+    height: 48px;
     background: #2e7dcc;
     color: white;
     border: 0;
     border-radius: 5px;
 }
-.btnConsultas:hover {
+.btnRegistrar:hover {
     background-color: #4a89de;
     cursor: pointer;
 }
-.btnConsultas:focus {
+.btnRegistrar:focus {
     outline: 0px;
 }
 
 
 .nom input[type="text"]{
     float: left;
-    width: 198px;
-    height: 40px;
+    width: 211px;
+    height: 44px;
     border-radius: 5px;
     margin-bottom: 10px;
     margin-right: 10px;
@@ -92,7 +86,7 @@ body{
 .tipo select{
     float: left;
     width: 198px;
-    height: 44px;
+    height: 48px;
     border-radius: 5px;
     margin-bottom: 10px;
     margin-right: 10px;
@@ -100,4 +94,102 @@ body{
     font-family: 'Oxygen', sans-serif;
     font-size: 1.25em;
     text-indent: 12px;
+}
+
+.myDiv{
+    clear: left;
+    float: left;
+    width: 960px;
+    margin-left: 150px;
+}
+.myDiv2{
+    clear: left;
+    float: left;
+    margin-left: 49px;
+}
+.myDiv table {
+    height: auto;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.myDiv table tr{
+
+
+    text-align: center;
+    border: 2px solid white;
+
+}
+
+.myDiv table th {
+    width: 230px;
+    font-size: 1.25em;
+    font-family: 'Oxygen', sans-serif;
+	border: 2px solid white;
+	background-color: #286ea5;
+    color: white;
+    height: 30px;
+
+}
+
+.myDiv table td {
+    width: 230px;
+    padding: 5px;
+    height: auto;
+	background-color: #efefef;
+    font-family: 'Oxygen', sans-serif;
+    border: 2px solid white;
+}
+
+.myDiv2 table {
+    height: auto;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.myDiv2 table tr{
+
+
+    text-align: center;
+    border: 2px solid white;
+
+}
+
+.myDiv2 table th {
+    width: 230px;
+    font-size: 1.25em;
+    font-family: 'Oxygen', sans-serif;
+	border: 2px solid white;
+	background-color: #286ea5;
+    color: white;
+    height: 30px;
+
+}
+
+.myDiv2 table td {
+    padding: 5px;
+    height: auto;
+	background-color: #efefef;
+    font-family: 'Oxygen', sans-serif;
+    border: 2px solid white;
+}
+
+
+.btnVer{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.25em;
+    margin: 0 auto auto auto;
+    width: 120px;
+    height: 40px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+.btnVer:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnVer:focus {
+    outline: 0px;
 }

@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
+<?php
+    session_start();
+    if (!isset($_SESSION['usuario'])){
+        header("location:../index.php");
+    }
 
+
+?>
 <head>
     <script>
 
@@ -34,9 +41,50 @@
     <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oxygen:300,400' rel='stylesheet' type='text/css'>
     <link href="../CSS/consultas.css" rel="stylesheet" type="text/css">
+    <link href="../CSS/head.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+   <header>
+            <div class="navbar" >
+                <div class="logo">
+                    <img class="img" src="../img/logo.png">
+                </div>
+                <div class="links">
+                    <ul class="nav">
+                        <li>
+                            <a href="../Consultas/consultas_personas.php">Personas</a>
+                        </li>
+                        <li>
+                            <a href="../Consultas/consultas_entidades.php">Entidades</a>
+                        </li>
+                        <li>
+                            <a href="../Consultas/consultas_categoria_persona.php">Persona Categorías</a>
+                        </li>
+                        <li>
+                            <a href="../Consultas/consultas_categorias.php">Categorías</a>
+                        </li>
+                        <li class="search">
+                            <form class="formSearch" role="search">
+                                <input type="text" class="txtBuscar" placeholder="Buscar">
+                                <input type="submit" class="btnBuscar" value="">
+                            </form>
+                        </li>
+
+                        <li class="editar">
+
+                                <img src="../img/settings.svg">
+
+                            <ul class="subEditar">
+                                <li class="perfil"><a href="../Perfil/perfil.php">Mi perfil</a></li>
+                                <li><a href="../logout.php">Salir</a></li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
     <section>
         <div class="containerBody">
             <div class="mainBody">
@@ -49,21 +97,22 @@
                             </div>
                             <div class="tipo">
                                 <select name = "filtro" id="filtro" >
-                                    <option value="cedula">Cedula</option>
+                                    <option value="cedula">Cédula</option>
                                     <option value="nombre">Nombre</option>
                                     <option value="primer">Primer Apellido</option>
                                     <option value="segundo">Segundo Apellido</option>
                                 </select>
                             </div>
-
-                            <div id="myDiv"></div>
-
                             <div class="submit">
-                                <input type="button" class="btnConsultas" value="Consultar" onclick="loadXMLDoc(nombre.value,filtro.value)">
+                                <a href='../Registros/registroPersonas.php'>
+                                    <input class="btnRegistrar"  type="button" value="Registrar Persona" />
+                                </a>
                             </div>
                         </form>
+
                     </div>
                 </div>
+                <div class="myDiv" id="myDiv"></div>
             </div>
         </div>
     </section>

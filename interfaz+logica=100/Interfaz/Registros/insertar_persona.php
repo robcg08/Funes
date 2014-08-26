@@ -1,6 +1,6 @@
 <?php
-
-$conn = oci_connect('fm', 'fm', 'localhost/funar');
+header('Content-Type: text/html; charset=UTF-8');
+$conn = oci_connect('fm', 'fm', 'localhost/funar','AL32UTF8');
 if (!$conn) {
     $e = oci_error();
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
@@ -91,5 +91,6 @@ for ($i=0; $i < sizeof($categoria); $i++){
 
 echo "listo";
 
+echo "<meta http-equiv='refresh' content='0; url=http://localhost/funes/interfaz+logica=100/Interfaz/index.php'>";
 
 ?>

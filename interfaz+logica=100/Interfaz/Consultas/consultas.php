@@ -1,9 +1,14 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html>
+<?php
+    session_start();
+    if (!isset($_SESSION['usuario'])){
+        header("location:../index.php");
+    }
 
+
+?>
 <head>
     <meta charset="utf-8">
     <title>Consultas</title>
@@ -46,7 +51,7 @@ session_start();
 
                             <ul class="subEditar">
                                 <li class="perfil"><a href="#">Mi perfil</a></li>
-                                <li><a href="#">Salir</a></li>
+                                <li><a href="../logout.php">Salir</a></li>
                             </ul>
 
                         </li>

@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
-
+    <?php
+        session_start();
+        if (isset($_SESSION['usuario'])){
+            header("location:../Interfaz/Consultas/consultas_entidades.php");
+        }
+    ?>
     <head>
         <title>Inicio</title>
         <meta charset="utf-8">
-        <link type="text/css" href="css/index.css" rel="stylesheet">
+        <link type="text/css" href="../Interfaz/CSS/index.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Oxygen:300,400' rel='stylesheet' type='text/css'>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -54,7 +59,7 @@
                         <div class="divDoRegistro">
                             <span>Todavía no tienes una cuenta? Regístrate</span>
                             <div>
-                                <a href="">
+                                <a href="../Interfaz/Registros/registroUsuarios.php">
                                     <input class="btnRegistrarseUsuario" type="button" value="Registrarse Usuario">
                                 </a>
                             </div>

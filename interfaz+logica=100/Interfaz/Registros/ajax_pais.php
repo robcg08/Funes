@@ -3,14 +3,14 @@ error_reporting(E_ERROR | E_PARSE);
 
 $pais = $_POST['pais'];
 
-$conn = oci_connect('fm', 'fm', 'localhost/funar');
+$conn = oci_connect('fm', 'fm', 'localhost/funar','AL32UTF8');
 if (!$conn) {
     $e = oci_error();
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 }
 
 
-$stid = oci_parse($conn, "select id_provincia, nombre from provincia where id_pais = ".$pais."");
+$stid = oci_parse($conn, "select id_provincia, nombre from provincia where id_pais = ".$pais."order by id_provincia");
 
 oci_execute($stid);
 

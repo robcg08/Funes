@@ -3,7 +3,7 @@ error_reporting(E_ERROR | E_PARSE);
 
 $distrito = $_POST['distrito'];
 
-$conn = oci_connect('fm', 'fm', 'localhost/funar');
+$conn = oci_connect('fm', 'fm', 'localhost/funar','AL32UTF8');
 if (!$conn) {
     $e = oci_error();
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);

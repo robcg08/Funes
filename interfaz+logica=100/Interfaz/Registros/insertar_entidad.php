@@ -1,6 +1,6 @@
 <?php
-
-$conn = oci_connect('fm', 'fm', 'localhost/funar');
+header('Content-Type: text/html; charset=UTF-8');
+$conn = oci_connect('fm', 'fm', 'localhost/funar','AL32UTF8');
 if (!$conn) {
     $e = oci_error();
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
@@ -60,9 +60,9 @@ oci_bind_by_name($stid, ':d', $id_direccion);
 oci_execute($stid);
 
 
-$stid = oci_parse($conn, 'begin :result := get_id_entidad(:n, :c);end;');
+$stid = oci_parse($conn, 'begin :result := get_id_entidad(:n, :dir);end;');
 oci_bind_by_name($stid, ':n', $nombre);
-oci_bind_by_name($stid, ':c', $id_direccion);
+oci_bind_by_name($stid, ':dir', $id_direccion);
 oci_bind_by_name($stid, ':result', $result, 40);
 
 oci_execute($stid);
@@ -73,8 +73,8 @@ $id_entidad = $result;
 for ($i=0; $i < sizeof($categoria); $i++){
 
 $stid = oci_parse($conn, "insert into categoriaxentidad(id_categoria, id_entidad) values (:c, :e)");
-
-oci_bind_by_name($stid, ':c', intval($categoria[$i]));
+$categoriaInt = intval($categoria[$i]);
+oci_bind_by_name($stid, ':c',$categoriaInt);
 oci_bind_by_name($stid, ':e', $id_entidad);
 
 oci_execute($stid);
@@ -82,5 +82,6 @@ oci_execute($stid);
 }
 
 echo "listo";
+echo "<meta http-equiv='refresh' content='0; url=http://localhost/funes/interfaz+logica=100/Interfaz/Consultas/consultas_entidades.php'>";
 
 ?>

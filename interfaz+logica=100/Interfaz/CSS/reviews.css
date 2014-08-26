@@ -11,8 +11,8 @@ body {
 }
 .mainBody {
     height: 100%;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 70px;
+    margin-right: 70px;
     border: 1px solid #F1F1F1;
     background: #FFF;
 }
@@ -23,7 +23,7 @@ body {
     width: 850px;
     position: relative;
     padding-bottom: 30px;
-    margin: 20px auto 0 140px;
+    margin: 20px auto 0 180px;
     margin-right: 0px;
 }
 .divForm {
@@ -204,4 +204,28 @@ body {
 
     float: left;
     width: 450px;
+}
+
+.reviews {
+    display: none ;
+}
+
+
+.btnUsuario{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1em;
+    width: 100px;
+    height: 30px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.btnUsuario:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnUsuario:focus {
+    outline: 0px;
 }

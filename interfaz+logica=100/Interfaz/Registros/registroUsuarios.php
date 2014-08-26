@@ -2,7 +2,7 @@
 <html>
 
 <head>
-
+    <script src="../libs/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script>
 
     function loadXMLDoc(cedula)
@@ -59,7 +59,13 @@
       }
       else{
         return false;
+
       }
+    }
+
+
+    function alert2(){
+      alert('Para registrar un usuario, es necesario registrar una persona.\nPor favor ingrese al link de la par.');
     }
     </script>
 
@@ -67,7 +73,7 @@
 
     <meta charset="utf8">
     <title>Registro de Usuario</title>
-    <link href="/funes/Interfaz/CSS/registroUsuarios.css" type="text/css" rel="stylesheet">
+    <link href="../CSS/registroUsuarios.css" type="text/css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oxygen:300,400' rel='stylesheet' type='text/css'>
 </head>
@@ -92,7 +98,7 @@
                             <p>Cédula</p>
                             <input type="text" name = "cedula" id = "cedula" onkeyup="loadXMLDoc(cedula.value)" required>
                         </div>
-                        <div id="myDiv"></div>
+
                         <div class="datos">
                             <p>Datos Privados (Nombre de usuario)</p>
                             <input id="datosPrivados" type="radio" name="datosPrivados" value="si">
@@ -100,11 +106,16 @@
                             <input id="datosPrivados" type="radio" name="datosPrivados" value="no">
                             <label for="no">NO</label>
                         </div>
-
+                        <div>
+                          <input type="checkbox" required> Aceptar Términos y condiciones <br>
+                          <a href="../Contrato/contrato.php" target="_blank">Ver contrato</a>
+                        </div>
                         <div class="submit">
                             <input type="submit" class="btnRegistrar" value="Registrar">
                         </div>
                     </form>
+                    <div id="myDiv"></div>
+
                 </div>
             </div>
         </div>

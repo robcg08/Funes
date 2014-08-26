@@ -1,7 +1,6 @@
 
 body{
-    background: url(/funes/Interfaz/img/background.jpg) no-repeat center center fixed;
-    font-family: 'Inder', sans-serif;
+    background: url(../img/background.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -12,7 +11,7 @@ body{
 .containerBody{
     background-size: cover;
     -webkit-background-size: cover;
-    height: 1000px;
+    height: auto;
     margin-bottom: 15px;
 }
 
@@ -67,8 +66,10 @@ body{
 }
 
 .submit{
+    float: left;
     margin-right: 60px;
     text-align: right;
+    margin-top: 40px;
 }
 .btnRegistrar {
     font-family: 'Maven Pro', sans-serif;
@@ -87,4 +88,38 @@ body{
 }
 .btnDoRegistrar:focus {
     outline: 0px;
+}
+
+.btnMenos{
+    font-family: 'Oxygen', sans-serif;
+    height: 40px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    width: 70px;
+    top:-2px;
+    float: left;
+    margin-left: 10px;
+}
+
+.btnMenos:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnMenos:focus {
+    outline: 0px;
+}
+
+.catSel{
+    float: left;
+    clear: left;
+}
+
+.selCategoria{
+    float: left;
+}
+
+.categorias{
+    height: auto;
 }

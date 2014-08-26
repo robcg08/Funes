@@ -44,6 +44,7 @@ body{
 
 .formRegistroUsuarios{
     margin-left: 50px;
+    margin-bottom: 10px;
 }
 .formRegistroUsuarios input[type="text"],input[type="password"], select ,input[type="date"]{
     width: 399px;
@@ -98,3 +99,31 @@ body{
     float: left;
 }
 
+.txtInfo{
+    margin-top:6px;
+    margin-left: 110px;
+}
+.txtInfo p ,a{
+    float: left;
+    margin-top:6px;
+    text-align: center;
+}
+.txtInfo a{
+   margin-left: 4px;
+}
+.btnInfo{
+    background: url(../img/info.svg) no-repeat;
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+    border: 0;
+    background-position: center center;
+    float: left;
+}
+.btnInfo:hover{
+    cursor: pointer;
+}
+
+#myDiv{
+    height: 40px;
+}

@@ -41,7 +41,7 @@
 
                             <ul class="subEditar">
                                 <li class="perfil"><a href="#">Mi perfil</a></li>
-                                <li><a href="#">Salir</a></li>
+                                <li><a href="../logout.php">Salir</a></li>
                             </ul>
 
                         </li>

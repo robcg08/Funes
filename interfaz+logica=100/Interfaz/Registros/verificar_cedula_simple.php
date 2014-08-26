@@ -10,6 +10,12 @@ if (!$conn) {
 
 $cedula = $_POST['cedula'];
 
+if(!is_numeric($cedula)){
+	echo "NO es un numero";
+	echo "<input name='existe' type='hidden' value='0'>";
+
+}
+else{
 
 $existe = False;
 
@@ -32,5 +38,5 @@ else{
 	echo "<input name='existe' type='hidden' value='1'>";
 }
 
-
+}
 ?>

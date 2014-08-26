@@ -1,6 +1,6 @@
 <?php
-
-$conn = oci_connect('fm', 'fm', 'localhost/funar');
+header('Content-Type: text/html; charset=UTF-8');
+$conn = oci_connect('fm', 'fm', 'localhost/funar','AL32UTF8');
 if (!$conn) {
     $e = oci_error();
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
@@ -81,8 +81,8 @@ oci_execute($stid);
 for ($i=0; $i < sizeof($categoria); $i++){
 
 	$stid = oci_parse($conn, "insert into categoriaxpersona (id_categoria, cedula) values (:c, :e)");
-
-	oci_bind_by_name($stid, ':c', intval($categoria[$i]));
+	$categoriaINT = intval($categoria[$i]);
+	oci_bind_by_name($stid, ':c', $categoriaINT);
 	oci_bind_by_name($stid, ':e', $cedula);
 
 	oci_execute($stid);
@@ -90,7 +90,8 @@ for ($i=0; $i < sizeof($categoria); $i++){
 }
 
 echo "listo - ya se pude registrar como usuario";
-echo "<a href='/funes/Interfaz/Registros/registroUsuarios.php'> click aqui</a>";
+echo "<a href='../Registros/registroUsuarios.php'> click aqui</a>";
+echo "<meta http-equiv='refresh' content='0; url=http://localhost/funes/interfaz+logica=100/Interfaz/Registros/registroUsuarios.php'>";
 
 
 

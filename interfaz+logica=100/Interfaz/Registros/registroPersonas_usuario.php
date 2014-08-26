@@ -1,5 +1,5 @@
 <?php
-$conn = oci_connect('fm', 'fm', 'localhost/funar');
+$conn = oci_connect('fm', 'fm', 'localhost/funar','AL32UTF8');
 if (!$conn) {
     $e = oci_error();
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
@@ -9,7 +9,7 @@ if (!$conn) {
 <!DOCTYPE html>
 <html>
     <head>
-
+        <script src="../libs/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
         <script>
             var categorias = new Array();
 
@@ -34,6 +34,31 @@ if (!$conn) {
                     }
                   }
                 xmlhttp.open("POST","verificar_cedula_simple.php",true);
+                xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                xmlhttp.send(url);
+            }
+
+             function fechaa(fecha)
+            {
+                var url = "fecha="+fecha;
+
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                  {// code for IE7+, Firefox, Chrome, Opera, Safari
+                  xmlhttp=new XMLHttpRequest();
+                  }
+                else
+                  {// code for IE6, IE5
+                  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                xmlhttp.onreadystatechange=function()
+                  {
+                  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                    {
+                    document.getElementById("fecha").innerHTML=xmlhttp.responseText;
+                    }
+                  }
+                xmlhttp.open("POST","test_edad.php",true);
                 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
                 xmlhttp.send(url);
             }
@@ -98,11 +123,14 @@ if (!$conn) {
               }
             }
 
+            $(function(){
+                masmas($('#categoria').val());
+            });
         </script>
 
-        <meta charset="utf8">
+        <meta charset="utf-8">
         <title>Registro de Personas</title>
-        <link href="/funes/Interfaz/CSS/registroPersonas.css" type="text/css" rel="stylesheet">
+        <link href="../CSS/registroPersonas.css" type="text/css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Oxygen:300,400' rel='stylesheet' type='text/css'>
     </head>
@@ -129,7 +157,7 @@ if (!$conn) {
                                 </div>
                                 <div>
                                     <p>Cédula</p>
-                                    <input type="text" name = "cedula" id="cedula" onkeyup="loadXMLDoc(cedula.value)" required>
+                                    <input type="text" name = "cedula" id="cedula" maxlength="9" onkeyup="loadXMLDoc(cedula.value)" required>
                                 </div>
                                 <div id="myDiv"></div>
                                 <div>
@@ -149,9 +177,10 @@ if (!$conn) {
                                 </div>
                                 <div>
                                     <p>Fecha de Nacimiento</p>
-                                    <input type="date" name = "fecha" id="fecha" required>
+                                    <input type="date" name = "fecha" id="fecha"  required>
                                 </div>
-                                <div>
+                                <div id="fechaa"></div>
+                                <div class="categorias">
                                   <p>Categoría</p>
                                   <?php
 
@@ -159,24 +188,33 @@ if (!$conn) {
 
                                   oci_execute($stid);
 
-                                  echo "<select name = 'categoria' id='categoria' onchange='masmas(this.value)'>";
+                                  echo "<select name = 'categoria' class='selCategoria' id='categoria' onchange='masmas(this.value)' required>";
                                   while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
                                     echo"<option value=".$row['ID_CATEGORIA'].">".$row['NOMBRE']."</option>";
                                   }
                                   echo "</select>";
                                   ?>
-                                  <input type="button" value="-" onclick="menosmenos()">
+                                  <input type="button" class="btnMenos" value="-" onclick="menosmenos()">
                                   <br>
-                                  <div id="txtHint"><b></b></div>
-                                  <br>
-                                  <a href='/funes/Interfaz/Registros/registroCategorias.php'> Registrar Categoria</a>
+                                  <div class="catSel">
+                                      <p>Categorías Seleccionadas</p>
+                                      <div id="txtHint">
 
+                                      <b></b></div>
+
+                                        <a href='../Registros/registroCategorias.php'> Registrar Categoría</a>
+                                    </div>
                                 </div>
                                 <div class="submit">
                                     <input type="submit" class="btnRegistrar" value="Registrar">
                                 </div>
                             </form>
                         </div>
+                        <?php
+                            echo "<a href='../Consultas/consultas_personas.php'>";
+                            echo    '<input type="button" class="btnRegistrar" value="Regresar">';
+                            echo "</a>";
+                        ?>
                     </div>
                 </div>
             </div>

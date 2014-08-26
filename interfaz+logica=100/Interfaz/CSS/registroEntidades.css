@@ -1,5 +1,10 @@
 body{
     font-family: 'Patua One',sans-serif;
+    background: url(../img/background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .containerBody{
@@ -22,8 +27,12 @@ body{
     height: auto;
     width: 620px;
     position: relative;
+    background: rgba(255, 255, 255, 0.85);
     padding-bottom: 30px;
     margin: 20px auto 0 auto;
+    border: 3px solid #2e7dcc;
+    -webkit-box-shadow: 5px 5px 10px #717480;
+    border-radius: 10px;
 }
 .divForm{
     text-align: left;
@@ -52,6 +61,8 @@ body{
 .submit{
     margin-right: 60px;
     text-align: right;
+    float: right;
+    clear: left;
 }
 .btnRegistrar {
     font-family: 'Oxygen', sans-serif;
@@ -75,6 +86,12 @@ body{
     width: 401px;
     border-bottom: 1px solid #4a89de;
     margin-bottom: 10px;
+    float: left;
+    clear: left;
+}
+
+.dir2{
+    clear: left;
 }
 .prov select{
     width: 194px;
@@ -90,7 +107,6 @@ body{
 
 .dis {
     clear: left;
-    float: left;
 }
 
 .dis select{
@@ -105,6 +121,40 @@ body{
 .barrio {
     float: left;
     margin-left: 10px;
+}
+
+
+.btnMenos{
+    font-family: 'Oxygen', sans-serif;
+    height: 40px;
+    background: #2e7dcc;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    width: 70px;
+    top:-2px;
+    float: left;
+    margin-left: 10px;
+}
+
+.btnMenos:hover {
+    background-color: #4a89de;
+    cursor: pointer;
+}
+.btnMenos:focus {
+    outline: 0px;
+}
+
+.selCategoria{
+    float: left;
+}
+
+.catSel{
+    clear: left;
+}
+
+.btnRegresar{
+    clear: right;
 }
 
 

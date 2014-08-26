@@ -6,7 +6,7 @@ if (!$conn) {
 }
 
 $usuario = $_POST["usuario"];
-$password = intval($_POST["password"]);
+$password = $_POST["password"];
 
 $stid = oci_parse($conn, "SELECT * FROM usuario where usuario = '" . $usuario . "'");
 oci_execute($stid);
@@ -14,11 +14,27 @@ oci_execute($stid);
 
 if ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)){
 
-	if ($row['PASS'] == $password) {
-		session_start();
-  	$_SESSION['usuario'] = $row['USUARIO'] ;
-    $_SESSION['cedula'] = $row['CEDULA'] ;
-  	header("Location: Consultas/consultas.php");
+
+	if ($row['PASS'] == $password ) {
+		if( $row['BLOQUEADO']=="si"){
+			echo"Este usuario esta bloqueado";
+		}
+		elseif( $row['ACTIVO']=="no"){
+			echo"Este usuario esta inactivo";
+		}
+		elseif($row['USUARIO'] == 'admin' ){
+			session_start();
+			$_SESSION['usuario'] = $row['USUARIO'] ;
+			$_SESSION['cedula'] = $row['CEDULA'] ;
+			header("Location: Perfil/admin.php");
+
+		}
+		else{
+			session_start();
+			$_SESSION['usuario'] = $row['USUARIO'] ;
+			$_SESSION['cedula'] = $row['CEDULA'] ;
+			header("Location: Consultas/consultas_entidades.php");
+		}
 	}
 	else{
 	echo "sorry la contraseña esta mal";

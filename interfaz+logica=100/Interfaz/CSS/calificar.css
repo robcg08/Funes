@@ -1,5 +1,6 @@
 body{
     font-family: 'Patua One',sans-serif;
+    background: #F6F8F8;
 }
 
 .containerBody{
@@ -7,11 +8,14 @@ body{
     -webkit-background-size: cover;
     height: 1000px;
     margin-bottom: 15px;
+    margin-top: -10px;
 }
 
 .mainBody{
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 70px;
+    margin-right: 70px;
+    border: 1px solid #F1F1F1;
+    background: #FFF;
 }
 
 .numCalf{

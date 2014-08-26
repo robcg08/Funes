@@ -94,10 +94,10 @@ body{
 .editar{
     height: 80px;
     width: 16.07%;
-    max-width:173px;
+    max-width:164px;
 }
 .editar img{
-    margin: 24px;
+    margin: 22px;
     border-left: 0 none;
 }
 .editar>img {
@@ -132,4 +132,9 @@ body{
 }
 .perfil{
     padding-top: 8px;
+}
+.img{
+    padding: 5px;
+    width: 120px;
+    height: 70px;
 }

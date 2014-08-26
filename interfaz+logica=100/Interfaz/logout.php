@@ -4,6 +4,6 @@
 
  session_destroy();
 
-echo "<a href='/superPru/pru05.php'> volver al login</a>";
+ header("Location: index.php");
 
 ?>
