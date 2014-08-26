@@ -1,5 +1,10 @@
 body{
     font-family: 'Patua One',sans-serif;
+    background: url(../img/background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .containerBody{
@@ -22,8 +27,13 @@ body{
     height: auto;
     width: 620px;
     position: relative;
+    background: rgba(255, 255, 255, 0.85);
     padding-bottom: 30px;
     margin: 20px auto 0 auto;
+    border: 3px solid #2e7dcc;
+    -webkit-box-shadow: 5px 5px 10px #717480;
+    border-radius: 10px;
+
 }
 .divForm{
     text-align: left;
@@ -74,6 +84,51 @@ body{
 
 .categorias{
     margin-top: 60px;
+
     text-align: center;
+
+}
+
+.txtCategoria{
+    margin: auto 50px;
     border-bottom: 1px solid #2e7dcc;
+}
+.table{
+    margin-top: 10px;
+    font-family: 'Oxygen', sans-serif;
+    margin-left: 170px;
+}
+
+.tablaCategorias table {
+    height: auto;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.tablaCategorias table tr{
+
+
+    text-align: center;
+    border: 2px solid white;
+
+}
+
+.tablaCategorias table th {
+    width: 230px;
+    font-size: 1.25em;
+    font-family: 'Oxygen', sans-serif;
+	border: 2px solid white;
+	background-color: #286ea5;
+    color: white;
+    height: 30px;
+
+}
+
+.tablaCategorias table td {
+    width: 230px;
+    padding: 5px;
+    height: auto;
+	background-color: #efefef;
+    font-family: 'Oxygen', sans-serif;
+    border: 2px solid white;
 }
